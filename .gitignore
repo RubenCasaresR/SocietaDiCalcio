@@ -1,0 +1,23 @@
+﻿# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Base de datos y entorno
+*.sqlite
+*.sqlite3
+.env
+.env.*
+
+# Logs
+*.log
+server-err.log
+server.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup de .git interno
+PAGINA-SC-2/.git.bak/

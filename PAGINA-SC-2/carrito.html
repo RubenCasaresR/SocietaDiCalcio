@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Societa Di Calcio</title>
+    <link rel="icon" href="logo-fondo-verde.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <button class="hamburger-btn" id="hamburger-btn">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="icons.svg#i-bars"></use></svg>
+        </button>
+        <div class="logo">
+            <a href="index.html"><img src="logo SC sin fondo.png" width="188" alt="Logo de la Marca"></a>
+        </div>
+        <nav class="main-nav" id="main-nav">
+            <button class="close-menu-btn" id="close-menu-btn">&times;</button>
+            <a href="index.html#novedades">Novedades</a>
+            <a href="index.html#colecciones">Colecciones</a>
+            <a href="index.html#nosotros">Nosotros</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+        <div class="cart-icon">
+            <a href="carrito.html" class="cart-icon">Cart <span class="cart-count" id="cart-count">0</span></a>
+        </div>
+    </header>
+
+    <main class="cart-page-main">
+        <section class="cart-section">
+            <h1>Tu Carrito de Compras</h1>
+            <div class="cart-layout">
+                <div class="cart-items-container">
+                    </div>
+
+                <div class="cart-summary">
+                    <h2>Resumen de la Orden</h2>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="summary-subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío</span>
+                        <span id="summary-shipping">$99.00</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span id="summary-total">$0.00</span>
+                    </div>
+                    <a href="checkout.html" class="btn btn-checkout">Proceder al Pago</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h2>Tu Carrito</h2>
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+        </div>
+        <div class="shipping-progress-container">
+            <p id="shipping-message">Calculando envío...</p>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="shipping-progress-fill"></div>
+            </div>
+        </div>
+        <div class="cart-drawer-items" id="cart-drawer-items"></div>
+        <div class="cart-drawer-footer">
+            <div class="drawer-summary-row">
+                <span>Subtotal</span>
+                <span id="drawer-subtotal">$0.00</span>
+            </div>
+            <p class="shipping-note">Impuestos y envío calculados en el checkout.</p>
+            <button class="btn btn-checkout-drawer" id="btn-checkout-drawer">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

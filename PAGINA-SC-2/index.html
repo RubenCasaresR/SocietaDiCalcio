@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Societa Di Calcio</title>
+    <link rel="icon" href="logo-fondo-verde.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="hero-full.jpg?v=2">
+    <link rel="stylesheet" href="styles.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://societadicalcio.com/">
+    <meta property="og:title" content="Societa Di Calcio | Tienda Oficial">
+    <meta property="og:description" content="Ropa inspirada en la pasión del fútbol. Descubre nuestra nueva colección clásica.">
+    <meta property="og:image" content="https://societadicalcio.com/logo-fondo-beige.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="home">
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+                    <a href="index.html" class="logo"><img src="logo SC sin fondo.png" width="188" alt="Societa Di Calcio"></a>
+            <nav class="main-nav" id="main-nav">
+                <button class="close-menu-btn" id="close-menu-btn">&times;</button>
+                <a href="#new-in">Novedades</a>
+                <a href="product.html?product=ronaldo-classic">Tienda</a>
+                <a href="carrito.html">Carrito</a>
+                <a href="faq.html">FAQ</a>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn search-btn" id="search-btn" aria-label="Buscar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <a href="carrito.html" class="icon-btn cart-icon" aria-label="Carrito">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span class="cart-count-badge cart-count" id="cart-count">0</span>
+                </a>
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Menú">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- Search overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <button class="search-close" id="search-close" aria-label="Cerrar búsqueda">&times;</button>
+        <input type="text" class="search-input" id="search-input" placeholder="Buscar productos, categorías..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero hero--full">
+        <img src="hero-full.jpg?v=2" alt="Campaña Societa Di Calcio" fetchpriority="high" decoding="async">
+    </section>
+
+    <!-- NEW IN -->
+    <main class="container" id="new-in" style="padding-top: 60px;">
+        <div class="section-header">
+            <h2 class="section-title">Colección</h2>
+            <div style="display:flex;gap:12px;align-items:center;">
+                <a href="product.html?product=ronaldo-classic" class="section-link">Ver producto</a>
+                <div class="section-nav">
+                    <button type="button" id="newin-prev" aria-label="Anterior">&#8592;</button>
+                    <button type="button" id="newin-next" aria-label="Siguiente">&#8594;</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-carousel-wrap">
+            <div class="product-carousel" id="new-in-carousel"></div>
+        </div>
+    </main>
+
+    <!-- Category banners -->
+    <section class="container" style="padding-top: 40px;">
+        <div class="category-banners">
+            <a href="product.html?product=ronaldo-classic" class="category-banner">
+                <img src="Società Di Calcio (7).png" alt="Clásica" loading="lazy">
+                <span class="category-banner-label">Clásica</span>
+            </a>
+            <a href="product.html?product=playera-ronaldo-black" class="category-banner">
+                <img src="Playera negra FRENTE.png" alt="Edición Black" loading="lazy">
+                <span class="category-banner-label">Edición Black</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- News / editorial -->
+    <section class="container" style="padding-top: 40px;">
+        <div class="section-header">
+            <h2 class="section-title">Campaña</h2>
+        </div>
+        <div class="product-gallery" id="campaign-gallery"></div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <h2 class="section-title">Newsletter</h2>
+        <p>Suscríbete para acceso anticipado, ofertas exclusivas y 10% de descuento en tu primera compra.</p>
+        <form id="newsletter-form" class="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="tu@email.com" required aria-label="Correo electrónico">
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="newsletter-message" class="newsletter-msg"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+            <div class="logo"><a href="index.html"><img src="logo SC sin fondo.png" width="188" alt="Societa Di Calcio"></a></div>
+                    <p>Ropa inspirada en la pasión del fútbol, diseñada para el día a día.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/societadicalcio" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@societadicalcio" aria-label="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Tienda</h4>
+                    <a href="#new-in">Novedades</a>
+                    <a href="product.html?product=ronaldo-classic">Tienda</a>
+                    <a href="carrito.html">Carrito</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ayuda</h4>
+                    <a href="faq.html">FAQs</a>
+                    <a href="returns.html">Devoluciones</a>
+                    <a href="terms.html">Términos</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Societa Di Calcio. Todos los derechos reservados.</span>
+                <div class="payment-icons">
+                    <span>Visa</span> &middot; <span>Mastercard</span> &middot; <span>Amex</span> &middot; <span>Mercado Pago</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">&#8593;</button>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h2>Tu Carrito</h2>
+            <button type="button" class="close-cart-btn" id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-drawer-body" id="cart-drawer-items"></div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total"><span>Total</span><span id="drawer-subtotal">$0.00</span></div>
+            <button type="button" class="checkout-btn" id="btn-checkout-drawer">Pagar Ahora</button>
+            <button type="button" class="checkout-clear-btn" id="cart-clear-btn">Vaciar carrito</button>
+        </div>
+    </div>
+
+    <script src="newsletter.js"></script>
+    <script src="index-loader.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

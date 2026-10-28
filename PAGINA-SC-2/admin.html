@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Societa Di Calcio</title>
+    <link rel="icon" href="logo-fondo-verde.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="login-screen" class="login-screen">
+        <div class="login-box">
+            <h1>🔐 Acceso Restringido</h1>
+            <p>Panel de administración de Società Di Calcio</p>
+            <div class="form-group">
+                <label>Contraseña de Administrador</label>
+                <input type="password" id="login-password" autocomplete="current-password">
+            </div>
+            <button class="btn-guardar" id="btn-login">Entrar al Panel</button>
+            <div id="login-error" class="mensaje"></div>
+        </div>
+    </div>
+
+    <div class="admin-container" id="admin-panel">
+        <div class="admin-topbar">
+            <button class="btn-eliminar btn-logout" id="btn-logout">🚪 Cerrar Sesión</button>
+        </div>
+        <h1>⚙️ Ingreso de Nueva Mercancía</h1>
+        <form id="form-nuevo-producto">
+            <div class="form-group">
+                <label>ID del Producto (Sin espacios, ej: playera-visitante):</label>
+                <input type="text" id="prod-id" required>
+            </div>
+            <div class="form-group">
+                <label>Nombre de la Playera:</label>
+                <input type="text" id="prod-nombre" required>
+            </div>
+            <div class="form-group">
+                <label>Precio ($):</label>
+                <input type="number" id="prod-precio" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Nombre de la Imagen Principal (ej: foto1.png):</label>
+                <input type="text" id="prod-imagen" required>
+            </div>
+            <div class="form-group">
+                <label>Descripción:</label>
+                <textarea id="prod-desc" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Inventario Inicial (Piezas por Talla):</label>
+                <div class="stock-grid">
+                    <div><label>XS:</label><input type="number" id="stock-xs" value="0" min="0"></div>
+                    <div><label>S:</label><input type="number" id="stock-s" value="0" min="0"></div>
+                    <div><label>M:</label><input type="number" id="stock-m" value="0" min="0"></div>
+                    <div><label>L:</label><input type="number" id="stock-l" value="0" min="0"></div>
+                    <div><label>XL:</label><input type="number" id="stock-xl" value="0" min="0"></div>
+                </div>
+            </div>
+            <button type="submit" class="btn-guardar">Guardar Producto en Bodega</button>
+        </form>
+        <div id="mensaje-alerta" class="mensaje"></div>
+
+        <hr>
+
+        <h1>👕 Inventario Actual</h1>
+        <div id="lista-inventario" class="admin-lista">
+            <p class="admin-cargando">Cargando inventario...</p>
+        </div>
+
+        <hr>
+
+        <h1>💌 Base de Datos de Clientes</h1>
+        <button id="btn-descargar-correos" class="btn-excel">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="icons.svg#i-file-excel"></use></svg> Descargar Correos en Excel
+        </button>
+
+        <hr>
+        
+        <h1>📦 Registro de Ventas</h1>
+        <div id="lista-ordenes" class="admin-lista">
+            <p class="admin-cargando">Cargando ventas...</p>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
